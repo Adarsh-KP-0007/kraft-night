@@ -15,7 +15,7 @@ token = requests.post("https://api.aylien.com/v1/oauth/token", auth=(username, p
 headers = {"Authorization": "Bearer {}".format(token), "AppId":"bef245bb"}
   
 #V6 URL
-url ='https://api.aylien.com/v6/news/stories?aql=language:(en) AND text: (india) AND sentiment.title.polarity:(negative neutral positive)&cursor=*&published_at.end=NOW&published_at.start=NOW-7DAYS/DAY'
+url ='https://api.aylien.com/v6/news/stories?aql=language:(en) AND categories:({{taxonomy:aylien AND id:ay.fin}} OR {{taxonomy:aylien AND id:ay.econ}} OR {{taxonomy:aylien AND id:ay.haw}}) AND sentiment.title.polarity:(negative neutral positive)&cursor=*&published_at.end=NOW&published_at.start=NOW-7DAYS/DAY'
 
 response = requests.get(url, headers=headers)
 data = response.json()
