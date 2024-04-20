@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/front-end/css/Homepage.css" />
+    <title>Home</title>
+    <style>
+      @keyframes slideRightToLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .slider img {
+        animation: slideRightToLeft 0.5s ease-in-out forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <p class="name">EEz-NEWS</p>
+      <nav class="navbar">
+        <a href="#">Politics</a>
+        <a href="#">Technology</a>
+        <a href="#">Sports</a>
+        <a href="#">Fashion</a>
+      </nav>
+    </header>
+    <hr class="hr" />
+    <div class="trend">
+      <p>TRENDING NOW</p>
+    </div>
+    <div class="top">
+      <div class="slider-wrap">
+        <div class="slider">
+          <a href="/politics.html"
+            ><img
+              id="slide-1"
+              src="/front-end/assests/image1.webp"
+              alt="image1"
+          /></a>
+          <a href="/technology.html"
+            ><img id="slide-2" src="/front-end/assests/image.webp" alt="image2"
+          /></a>
+          <a href="/sports.html"
+            ><img id="slide-3" src="/front-end/assests/image3.jpg" alt="image3"
+          /></a>
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1" onclick="showSlide(1)"></a>
+          <a href="#slide-2" onclick="showSlide(2)"></a>
+          <a href="#slide-3" onclick="showSlide(3)"></a>
+        </div>
+      </div>
+      <div class="top-side">
+        <div class="box">
+          <img src="/front-end/assests/image3.jpg" />
+          <a href="/front-end/html/newspage.html">
+            <p class="head">
+              Lorem Ipsum passages, and more recently with desktop publishing
+              including versions of Lorem Ipsum.
+            </p>
+          </a>
+        </div>
+        <div class="box">
+          <img src="/front-end/assests/image1.webp" />
+          <a href="">
+            <p class="head">
+              Lorem Ipsum passages, and more recently with desktop publishing
+              including versions of Lorem Ipsum.
+            </p>
+          </a>
+        </div>
+        <div class="box">
+          <img src="/front-end/assests/image.jpg" />
+
+          <a href="">
+            <p class="head">
+              Lorem Ipsum passages, and more recently with desktop publishing
+              including versions of Lorem Ipsum.
+            </p>
+          </a>
+        </div>
+        <div class="box">
+          <img src="/front-end/assests/image.webp" />
+          <a href="">
+            <p class="head">
+              Garena Free Fire MAX redeem codes for April 20: Win exciting
+              rewards and free gifts today
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="hr2" />
+    <div class="top2">
+      <div class="top2-box">
+        <img src="/front-end/assests/image.webp"/ >
+        <a href="">
+          <p class="head">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters.
+          </p>
+        </a>
+      </div>
+      <div class="top2-box">
+        <img src="/front-end/assests/image.webp"/ >
+        <a href="">
+          <p class="head">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters.
+          </p>
+        </a>
+      </div>
+      <div class="top2-box">
+        <img src="/front-end/assests/image.webp"/ >
+        <a href="">
+          <p class="head">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters.
+          </p>
+        </a>
+      </div>
+      <div class="top2-box">
+        <img src="/front-end/assests/image.webp"/ >
+        <a href="">
+          <p class="head">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters.
+          </p>
+        </a>
+      </div>
+    </div>
+    <hr>
+    <div class="bottom">
+        <div class="bottom-box">
+           <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
+                including versions of Lorem Ipsum.</p></a>
+        </div>
+        <div class="bottom-box">
+           <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
+                including versions of Lorem Ipsum.</p></a>
+        </div>
+        <div class="bottom-box">
+            <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
+                including versions of Lorem Ipsum.</p></a>
+        </div>
+        <div class="bottom-box">
+            <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
+                including versions of Lorem Ipsum.</p></a>
+        </div>
+    </div>
+    <hr>
+    <div>
+        
+          <div class="tailend">
+          <p class="no">EEz-NEWS</p>
+          <p class="para">© 2024 EEz-NEWS. All right reserved</p>
+          <p class="para">Terms of service</p>
+          <p class="para">Privacy Policy</p>
+          </div>
+        
+        
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      let slideIndex = 1;
+      showSlide(slideIndex);
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".slider img");
+        slides.forEach((slide) => (slide.style.display = "none"));
+        document.getElementById(`slide-${index}`).style.display = "block";
+      }
+
+      function nextSlide() {
+        slideIndex++;
+        if (slideIndex > 3) {
+          slideIndex = 1;
+        }
+        showSlide(slideIndex);
+      }
+
+      setInterval(nextSlide, 3000); // Change slide every 2 seconds
+    </script>
+  </body>
+</html>

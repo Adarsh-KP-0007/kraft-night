@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+      min-height: 200vh;
+      width: 100%;
+  }
+  .header{
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+  }
+  .name{
+    font-size: 30px;
+    font-weight: 700;
+}
+.navbar a{
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    margin-left: 40px;
+}
+
+.navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    background: red;
+    height: 2px;
+    transition: .3s;
+}
+.navbar a:hover::before{
+    width: 100%;
+}
+.hr{
+    border:none;
+    height: 20px;
+       width: 90%;
+      height: 50px;
+      margin-top: 0;
+      border-bottom: 1px solid #1f1209;
+      box-shadow: 0 20px 20px -20px #333;
+    margin: -50px auto 10px; 
+}
+.head{
+    height: auto;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px ;
+}
+.head p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+}
+.head .img {
+    width: 800px; /* Added width property to ensure the image fits inside the container */
+    height: 500px; /* Adjusted height to 100% */
+    margin-top: 10px;
+    margin-left: 120px;
+    margin-right: 120px;
+    border-radius: 10px;
+    overflow: hidden; /* Added overflow property to prevent image overflow */
+    box-shadow: 0 20px 20px -20px #333;
+}
+
+.head .img img {
+    width: 800px; /* Added width property to ensure the image fits inside the container */
+    height: 500px; /* Added height property to ensure the image fits inside the container */
+    object-fit: cover; /* Added object-fit property for responsive image fitting */
+}
+.content{
+    height: auto;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px ;
+}
+.content p{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 2; 
+}
+.button{
+    height: auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px ;
+    display: flex;
+}
+.button p{
+    margin-top: 15px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.button button{
+    width: 130px;
+    height: 58px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgba(207, 55, 55, 1); 
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0.5, 0.7);
+}
+.content2{
+    height: auto;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px ;
+}
+.content2 p{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 2; 
+}
