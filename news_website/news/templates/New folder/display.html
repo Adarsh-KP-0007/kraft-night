@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Display</title>
+    <style>
+        /* Basic styling for the news list */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .news-item {
+            margin-bottom: 20px;
+        }
+        .news-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .news-description {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest News</h1>
+    <ul class="news-list">
+        <!-- Sample news items -->
+        <li class="news-item">
+            <div class="news-title">Sample News Title 1</div>
+            <div class="news-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam massa quis mauris mattis ultrices.</div>
+        </li>
+        <li class="news-item">
+            <div class="news-title">Sample News Title 2</div>
+            <div class="news-description">Sed euismod nisi id felis feugiat, vel fringilla elit fringilla. Aliquam auctor urna a fermentum malesuada.</div>
+        </li>
+        <li class="news-item">
+            <div class="news-title">Sample News Title 3</div>
+            <div class="news-description">Fusce at arcu nec turpis mollis sollicitudin ac vitae sem. Nunc ultrices metus sit amet odio vehicula, in ultricies eros sollicitudin.</div>
+        </li>
+        <!-- Add more news items here -->
+    </ul><br>
+    <h1>{{ data }}</h1>
+</body>
+</html>

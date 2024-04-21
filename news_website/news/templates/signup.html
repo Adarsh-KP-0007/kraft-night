@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+<body>
+    <header class="header">
+        <p class="name">EEz-NEWS</p>
+        <nav class="navbar">
+          
+        </nav>
+      </header>
+    <div class="container">
+        <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="wrapper">
+            <h1>Signup</h1>
+            <div class="divs">
+                
+                <div class="div1">
+                    <div class="input-box">
+                        <input type="text" placeholder="Name" name="name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email" name="email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" name="password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <div class="div2">
+                    <p>Select Your Interest...</p>
+                    <label><input type="checkbox" name="business" value="True"> Business</label><br>
+                    <label><input type="checkbox" name="entertainment" value="True""> Entertainment</label><br>
+                    <label><input type="checkbox" name="general" value="True""> General</label><br>
+                    <label><input type="checkbox" name="health" value="True""> Health</label><br>
+                    <label><input type="checkbox" name="science" value="True""> Science</label><br>
+                    <label><input type="checkbox" name="sports" value="True""> Sports</label><br>
+                    <label><input type="checkbox" name="technology" value="True""> Technology</label><br>
+                  </div>
+            </div>
+           
+              
+            <button class="btn" type="submit" value="submit">Sign Up</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+            </div>
+        </div></form>
+    </div>
+</body>
+</html>

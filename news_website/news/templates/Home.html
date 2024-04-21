@@ -1,0 +1,235 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'Home.css' %}" />
+    <title>Home</title>
+    <style>
+      @keyframes slideRightToLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .slider img {
+        animation: slideRightToLeft 0.5s ease-in-out forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <p class="name">EEz-NEWS</p>
+      <nav class="navbar">
+        {% if request.user.is_authenticated %}
+              <a href="{% url 'logout-user' %}">
+               <button class='login-button'>
+                     Logout
+               </button>
+               </a>
+        {% else %}
+          <a href="{% url 'login' %}">
+                <button class='login-button'>
+                    Login
+                </button>
+          </a>
+        {% endif %}
+      </nav>
+    </header>
+    <hr class="hr" />
+    <div class="trend">
+      <p>TRENDING NOW</p>
+    </div>
+    <div class="top">
+      <div class="slider-wrap">
+        <div class="slider">
+          <div class="slide-item">
+            <a href="/politics.html">
+              <img
+                id="slide-1"
+                src={{data.0.image}}
+                alt="image1"
+              />
+              <p class="slide-title">
+                <h4>{{ data.0.title }}</h4>
+              </p>
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="/technology.html">
+              <img
+                id="slide-2"
+                src={{data.1.image}}
+                alt="image2"
+              />
+              <p class="slide-title">
+                <h4>{{ data.1.title }}</h4>
+              </p>
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="/sports.html">
+              <img
+                id="slide-3"
+                src={{data.2.image}}
+                alt="image3"
+              />
+              <p class="slide-title">
+                <h4>{{ data.2.title }}</h4>
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="slider-nav">
+          <a href="#slide-1" onclick="showSlide(1)"></a>
+          <a href="#slide-2" onclick="showSlide(2)"></a>
+          <a href="#slide-3" onclick="showSlide(3)"></a>
+        </div>
+      </div>
+      <div class="top-side">
+        <div class="box">
+          <img src={{data.3.image}}/>
+          <a href="/front-end/html/newspage.html">
+            <p class="head">
+              <h4>{{ data.3.title }}</h4>
+            </p>
+          </a>
+        </div>
+        <div class="box">
+          <img src={{data.4.image}} />
+          <a href="">
+            <p class="head">
+              <h4>{{ data.4.title }}</h4>
+            </p>
+          </a>
+        </div>
+        <div class="box">
+          <img src={{data.5.image}} />
+
+          <a href="">
+            <p class="head">
+              <h4>{{ data.5.title }}</h4>
+            </p>
+          </a>
+        </div>
+        <div class="box">
+          <img src={{data.6.image}} />
+          <a href="">
+            <p class="head">
+              <h4>{{ data.6.title }}</h4>
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="hr2" />
+    <div class="top2">
+      <div class="top2-box">
+        <img src={{data.7.image}} />
+        <a href="">
+          <p class="head">
+            <h4>{{ data.7.title }}</h4>
+          </p>
+        </a>
+      </div>
+      <div class="top2-box">
+        <img src={{data.8.image}} / >
+        <a href="">
+          <p class="head">
+            <h4>{{ data.8.title }}</h4>
+          </p>
+        </a>
+      </div>
+      <div class="top2-box">
+        <img src={{data.9.image}} / >
+        <a href="">
+          <p class="head">
+            <h4>{{ data.9.title }}</h4>
+          </p>
+        </a>
+      </div>
+      <div class="top2-box">
+        <img src={{data.10.image}} / >
+        <a href="">
+          <p class="head">
+            <h4>{{ data.10.title }}</h4>
+          </p>
+        </a>
+      </div>
+    </div>
+    <hr />
+    <div class="bottom">
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            <h4>{{ mydata.0.title }}</h4>
+            <h5>{{ mydata.0.summary }}</h5>
+          </p></a
+        >
+      </div>
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            <h4>{{ mydata.1.title }}</h4>
+            <h5>{{ mydata.1.summary }}</h5>
+          </p></a
+        >
+      </div>
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            <h4>{{ mydata.2.title }}</h4>
+            <h5>{{ mydata.2.summary }}</h5>
+          </p></a
+        >
+      </div>
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            <h4>{{ mydata.3.title }}</h4>
+            <h5>{{ mydata.3.summary }}</h5>
+          </p></a
+        >
+      </div>
+    </div>
+    <hr />
+    <div>
+      <div class="tailend">
+        <p class="no">EEz-NEWS</p>
+        <p class="para">© 2024 EEz-NEWS. All right reserved</p>
+        <p class="para">Terms of service</p>
+        <p class="para">Privacy Policy</p>
+      </div>
+    </div>
+
+    <script>
+      let slideIndex = 0;
+      showSlide(slideIndex);
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".slider .slide-item");
+        slides.forEach((slide) => (slide.style.display = "none"));
+        slideIndex = index;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
+      function nextSlide() {
+        showSlide(slideIndex + 1);
+      }
+
+      setInterval(nextSlide, 3000); // Change slide every 3 seconds
+      // Change slide every 2 seconds
+    </script>
+  </body>
+</html>

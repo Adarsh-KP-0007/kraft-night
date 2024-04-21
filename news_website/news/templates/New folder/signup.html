@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences Form</title>
+</head>
+<body>
+    <h1>User Preferences Form</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" maxlength="50" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+        
+        <label for="general">General:</label>
+        <input type="checkbox" id="general" name="general" value="True"><br>
+        
+        <label for="business">Business:</label>
+        <input type="checkbox" id="business" name="business" value="True"><br>
+        
+        <label for="entertainment">Entertainment:</label>
+        <input type="checkbox" id="entertainment" name="entertainment" value="True"><br>
+        
+        <label for="health">Health:</label>
+        <input type="checkbox" id="health" name="health" value="True"><br>
+        
+        <label for="science">Science:</label>
+        <input type="checkbox" id="science" name="science" value="True"><br>
+        
+        <label for="sports">Sports:</label>
+        <input type="checkbox" id="sports" name="sports" value="True"><br>
+        
+        <label for="technology">Technology:</label>
+        <input type="checkbox" id="technology" name="technology" value="True"><br>
+        
+        <label for="politics">Politics:</label>
+        <input type="checkbox" id="politics" name="politics" value="True"><br>
+        
+        <label for="world">World:</label>
+        <input type="checkbox" id="world" name="world" value="True"><br>
+        
+        <label for="lifestyle">Lifestyle:</label>
+        <input type="checkbox" id="lifestyle" name="lifestyle" value="True"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
