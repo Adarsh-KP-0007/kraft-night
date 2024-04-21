@@ -30,15 +30,15 @@
       <nav class="navbar">
         {% if request.user.is_authenticated %}
               <a href="{% url 'logout-user' %}">
-               <button class='login-button'>
+               
                      Logout
-               </button>
+            
                </a>
         {% else %}
           <a href="{% url 'login' %}">
-                <button class='login-button'>
+                
                     Login
-                </button>
+                
           </a>
         {% endif %}
       </nav>
@@ -51,7 +51,7 @@
       <div class="slider-wrap">
         <div class="slider">
           <div class="slide-item">
-            <a href="/politics.html">
+            <a href={{data.0.link}}>
               <img
                 id="slide-1"
                 src={{data.0.image}}
@@ -63,7 +63,7 @@
             </a>
           </div>
           <div class="slide-item">
-            <a href="/technology.html">
+            <a href={{data.1.link}}>
               <img
                 id="slide-2"
                 src={{data.1.image}}
@@ -75,7 +75,7 @@
             </a>
           </div>
           <div class="slide-item">
-            <a href="/sports.html">
+            <a href={{data.2.link}}>
               <img
                 id="slide-3"
                 src={{data.2.image}}
@@ -97,7 +97,7 @@
       <div class="top-side">
         <div class="box">
           <img src={{data.3.image}}/>
-          <a href="/front-end/html/newspage.html">
+          <a href={{data.3.link}}>
             <p class="head">
               <h4>{{ data.3.title }}</h4>
             </p>
@@ -105,7 +105,7 @@
         </div>
         <div class="box">
           <img src={{data.4.image}} />
-          <a href="">
+          <a href={{data.4.link}}>
             <p class="head">
               <h4>{{ data.4.title }}</h4>
             </p>
@@ -114,7 +114,7 @@
         <div class="box">
           <img src={{data.5.image}} />
 
-          <a href="">
+          <a href={{data.5.link}}>
             <p class="head">
               <h4>{{ data.5.title }}</h4>
             </p>
@@ -122,7 +122,7 @@
         </div>
         <div class="box">
           <img src={{data.6.image}} />
-          <a href="">
+          <a href={{data.6.link}}>
             <p class="head">
               <h4>{{ data.6.title }}</h4>
             </p>
@@ -134,7 +134,7 @@
     <div class="top2">
       <div class="top2-box">
         <img src={{data.7.image}} />
-        <a href="">
+        <a href={{data.7.link}}>
           <p class="head">
             <h4>{{ data.7.title }}</h4>
           </p>
@@ -142,7 +142,7 @@
       </div>
       <div class="top2-box">
         <img src={{data.8.image}} / >
-        <a href="">
+        <a href={{data.8.link}}>
           <p class="head">
             <h4>{{ data.8.title }}</h4>
           </p>
@@ -150,7 +150,7 @@
       </div>
       <div class="top2-box">
         <img src={{data.9.image}} / >
-        <a href="">
+        <a href={{data.9.link}}>
           <p class="head">
             <h4>{{ data.9.title }}</h4>
           </p>
@@ -158,7 +158,7 @@
       </div>
       <div class="top2-box">
         <img src={{data.10.image}} / >
-        <a href="">
+        <a href={{data.10.link}}>
           <p class="head">
             <h4>{{ data.10.title }}</h4>
           </p>
