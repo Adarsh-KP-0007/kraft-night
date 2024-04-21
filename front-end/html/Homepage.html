@@ -39,19 +39,47 @@
     <div class="top">
       <div class="slider-wrap">
         <div class="slider">
-          <a href="/politics.html"
-            ><img
-              id="slide-1"
-              src="/front-end/assests/image1.webp"
-              alt="image1"
-          /></a>
-          <a href="/technology.html"
-            ><img id="slide-2" src="/front-end/assests/image.webp" alt="image2"
-          /></a>
-          <a href="/sports.html"
-            ><img id="slide-3" src="/front-end/assests/image3.jpg" alt="image3"
-          /></a>
+          <div class="slide-item">
+            <a href="/politics.html">
+              <img
+                id="slide-1"
+                src="/front-end/assests/image1.webp"
+                alt="image1"
+              />
+              <p class="slide-title">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="/technology.html">
+              <img
+                id="slide-2"
+                src="/front-end/assests/image.webp"
+                alt="image2"
+              />
+              <p class="slide-title">
+                Anandhu Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry.
+              </p>
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="/sports.html">
+              <img
+                id="slide-3"
+                src="/front-end/assests/image3.jpg"
+                alt="image3"
+              />
+              <p class="slide-title">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </a>
+          </div>
         </div>
+
         <div class="slider-nav">
           <a href="#slide-1" onclick="showSlide(1)"></a>
           <a href="#slide-2" onclick="showSlide(2)"></a>
@@ -82,8 +110,8 @@
 
           <a href="">
             <p class="head">
-              Lorem Ipsum passages, and more recently with desktop publishing
-              including versions of Lorem Ipsum.
+              anadhuLorem Ipsum passages, and more recently with desktop
+              publishing including versions of Lorem Ipsum.
             </p>
           </a>
         </div>
@@ -145,74 +173,71 @@
         </a>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="bottom">
-        <div class="bottom-box">
-           <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
-                including versions of Lorem Ipsum.</p></a>
-        </div>
-        <div class="bottom-box">
-           <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
-                including versions of Lorem Ipsum.</p></a>
-        </div>
-        <div class="bottom-box">
-            <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
-                including versions of Lorem Ipsum.</p></a>
-        </div>
-        <div class="bottom-box">
-            <a href=""> <p>Lorem Ipsum passages, and more recently with desktop publishing
-                including versions of Lorem Ipsum.</p></a>
-        </div>
-    </div>
-    <hr>
-    <div>
-        
-          <div class="tailend">
-          <p class="no">EEz-NEWS</p>
-          <p class="para">© 2024 EEz-NEWS. All right reserved</p>
-          <p class="para">Terms of service</p>
-          <p class="para">Privacy Policy</p>
-          </div>
-        
-        
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            Lorem Ipsum passages, and more recently with desktop publishing
+            including versions of Lorem Ipsum.
+          </p></a
+        >
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            anandhuLorem Ipsum passages, and more recently with desktop
+            publishing including versions of Lorem Ipsum.
+          </p></a
+        >
+      </div>
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            Lorem Ipsum passages, and more recently with desktop publishing
+            including versions of Lorem Ipsum.
+          </p></a
+        >
+      </div>
+      <div class="bottom-box">
+        <a href="">
+          <p>
+            dsdsdLorem Ipsum passages, and more recently with desktop publishing
+            including versions of Lorem Ipsum.
+          </p></a
+        >
+      </div>
+    </div>
+    <hr />
+    <div>
+      <div class="tailend">
+        <p class="no">EEz-NEWS</p>
+        <p class="para">© 2024 EEz-NEWS. All right reserved</p>
+        <p class="para">Terms of service</p>
+        <p class="para">Privacy Policy</p>
+      </div>
+    </div>
 
     <script>
-      let slideIndex = 1;
+      let slideIndex = 0;
       showSlide(slideIndex);
 
       function showSlide(index) {
-        const slides = document.querySelectorAll(".slider img");
+        const slides = document.querySelectorAll(".slider .slide-item");
         slides.forEach((slide) => (slide.style.display = "none"));
-        document.getElementById(`slide-${index}`).style.display = "block";
+        slideIndex = index;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        slides[slideIndex].style.display = "block";
       }
 
       function nextSlide() {
-        slideIndex++;
-        if (slideIndex > 3) {
-          slideIndex = 1;
-        }
-        showSlide(slideIndex);
+        showSlide(slideIndex + 1);
       }
 
-      setInterval(nextSlide, 3000); // Change slide every 2 seconds
+      setInterval(nextSlide, 3000); // Change slide every 3 seconds
+      // Change slide every 2 seconds
     </script>
   </body>
 </html>
